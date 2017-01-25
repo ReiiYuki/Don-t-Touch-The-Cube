@@ -13,5 +13,10 @@ public class Handle : MonoBehaviour {
 	void Update () {
         gameObject.transform.Translate(Input.GetAxis("Horizontal") * Vector3.right * Time.deltaTime*5);
         gameObject.transform.Translate(Input.GetAxis("Vertical") * Vector3.up * Time.deltaTime*5);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GetComponent<Rigidbody>().useGravity = true;
+            GetComponent<Rigidbody>().AddForce(0, 10, 50, ForceMode.Impulse);
+        }
 	}
 }
