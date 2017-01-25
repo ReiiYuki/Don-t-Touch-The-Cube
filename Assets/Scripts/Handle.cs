@@ -11,6 +11,7 @@ public class Handle : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        gameObject.transform.Translate(Input.GetAxis("Horizontal") * Vector3.right * Time.deltaTime*5);
+        gameObject.transform.Translate(Input.GetAxis("Vertical") * Vector3.up * Time.deltaTime*5);
 	}
 }
